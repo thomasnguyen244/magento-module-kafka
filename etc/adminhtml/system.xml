@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="workwiththomas">
+            <label>Work With Thomas</label>
+        </tab>
+        <section id="kafka" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Thomas Apache Kafka</label>
+            <tab>workwiththomas</tab>
+            <resource>Thomas_Kafka::config_kafka</resource>
+            <group id="connection" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Connection settings</label>
+                <field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="schema_registry_host" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment">
+                    <label>Host:port SchemaRegistry</label>
+                    <comment>For example localhost:8081</comment>
+                </field>
+                <field id="broker_host" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment">
+                    <label>Host:port of Apache Kafka broker</label>
+                    <comment>For example localhost:9092</comment>
+                </field>
+            </group>
+            <group id="consumers" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Listener settings</label>
+                <field id="cron_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment"
+                       type="select">
+                    <label>Running on the crown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If it is disabled, then only manually or in a separate instance in Kubernetes/Rancher</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -17,3 +17,5 @@ Default admin
 --
 http://localhost:9021/ - Control Center
 localhost:9092 - Kafka
+
+Forked from:[Module Kafka](https://github.com/neverovsky/magento-module-kafka) for maintain and updating module.

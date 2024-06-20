@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="thomas_kafka_consumers">
+		<job instance="Thomas\Kafka\Cron\ConsumersRunner" method="execute" name="thomas_kafka_cosumers_runner">
+			<schedule>* * * * *</schedule>
+		</job>
+	</group>
+</config>
